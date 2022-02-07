@@ -14,7 +14,7 @@ import {
 } from '@material-ui/core/'
 import NotificationsIcon from '@material-ui/icons/Notifications';
 
-const user = makeStyles({
+const useStyles = makeStyles({
 
     logo: {
         width: '50px',
@@ -44,8 +44,8 @@ const user = makeStyles({
 
 })
 
-function Navbar(props) {
-    const classes = user();
+const Navbar = () => {
+    const classes = useStyles();
     return (
         <AppBar color="default"   >
             <Toolbar className='toolbar'>
@@ -105,7 +105,4 @@ function Navbar(props) {
     )
 }
 
-
-
-export default Navbar
-
+export default Navbar;

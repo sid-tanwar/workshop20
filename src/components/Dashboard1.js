@@ -11,6 +11,7 @@ import React from "react";
 import logo from "../userlogo.png";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import SearchIcon from "@material-ui/icons/Search";
+
 const useStyles = makeStyles((theme) => ({
   head: {
     padding: "10px",
@@ -19,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "5px",
     padding: "5px",
     '&:hover': {
-      backgroundColor: "blue",
+      backgroundColor: "grey",
     },
   },
   logo: {
@@ -59,7 +60,7 @@ const arr = [{
   "date": "20th January 2022"
 }]
 
-export default function LeftDashboard() {
+const Dashboard1 = () => {
   const classes = useStyles();
   return (
     <div>
@@ -67,26 +68,30 @@ export default function LeftDashboard() {
         <InputBase placeholder="Search Patient" />
         <SearchIcon />
       </div>
-      {arr.map((item, index) => {
-        return (
-          <Card className={classes.card} sx={{ maxWidth: 345 }}>
-            <CardHeader
-              avatar={
-                <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                  <img src={logo} alt="logo" className={classes.logo}></img>
-                </Avatar>
-              }
-              action={
-                <IconButton aria-label="settings">
-                  <FiberManualRecordIcon />
-                </IconButton>
-              }
-              title={item.name}
-              subheader={item.date}
-            />
-          </Card>
-        );
-      })}
-    </div>
+      {
+        arr.map((item, index) => {
+          return (
+            <Card className={classes.card} sx={{ maxWidth: 345 }}>
+              <CardHeader
+                avatar={
+                  <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                    <img src={logo} alt="logo" className={classes.logo}></img>
+                  </Avatar>
+                }
+                action={
+                  <IconButton color="secondary" aria-label="settings">
+                    <FiberManualRecordIcon />
+                  </IconButton>
+                }
+                title={item.name}
+                subheader={item.date}
+              />
+            </Card>
+          );
+        })
+      }
+    </div >
   );
 }
+
+export default Dashboard1;

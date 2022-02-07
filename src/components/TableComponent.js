@@ -14,7 +14,8 @@ import {
 import DeleteIcon from '@material-ui/icons/Delete';
 import AddIcon from '@material-ui/icons/Add';
 import CreateIcon from '@material-ui/icons/Create';
-const styles = makeStyles(theme => ({
+
+const styles = makeStyles(() => ({
   title: {
     backgroundColor: 'grey',
     width: '150px'
@@ -63,7 +64,7 @@ const rows = [
   createData('Shoulder Reconstruction', 'January 2012', 'General Breathing Tube', 'No', 'No'),
 ];
 
-export default function TableComp() {
+const TableComponent = () => {
   const classes = styles();
   return (
 
@@ -178,3 +179,5 @@ export default function TableComp() {
     </div>
   );
 }
+
+export default TableComponent;

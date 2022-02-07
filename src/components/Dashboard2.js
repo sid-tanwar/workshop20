@@ -10,7 +10,7 @@ import logo2 from "../Yes.jpeg";
 import TableComponent from "./TableComponent";
 
 
-const style = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   main: {
     maxWidth: "100%",
     maxHeight: "50%",
@@ -98,8 +98,8 @@ const style = makeStyles((theme) => ({
 
 }));
 
-export default function RightDashboard() {
-  const classes = style();
+const Dashboard2 = () => {
+  const classes = useStyles();
 
   const [value, setValue] = React.useState(0);
   const handleChange = (event, newValue) => {
@@ -217,3 +217,5 @@ export default function RightDashboard() {
     </div>
   );
 }
+
+export default Dashboard2;
