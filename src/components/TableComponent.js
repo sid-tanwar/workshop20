@@ -98,17 +98,9 @@ export default function TableComp() {
             </TableRow>
           </TableHead>
           <TableBody className={classes.body}>
-            {rows.map((row) => (
-              <TableRow className={classes.TableRow}
-                key={row.name}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-              >
-                <TableCell component="th" scope="row">
-                  Yes
-                </TableCell>
-
-              </TableRow>
-            ))}
+            <TableCell component="th" scope="row">
+              Yes
+            </TableCell>
           </TableBody>
         </Table>
       </TableContainer>
